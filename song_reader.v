@@ -18,11 +18,17 @@ module song_reader(
     input reset,
     input play,
     input [1:0] song,
-    input note_done,
+    input note_done, //three diff variables for this 
     output wire song_done,
-    output wire [5:0] note,
-    output wire [5:0] duration,
-    output wire new_note
+    output wire [5:0] note1, //three different output notes
+    output wire [5:0] note2,
+    output wire [5:0] note3,
+    output wire [5:0] duration1, //three different variables 
+    output wire [5:0] duration2, //three different variables 
+    output wire [5:0] duration3, //three different variables 
+    output wire new_note1,
+    output wire new_note2,
+    output wire new_note3
 );
     wire [`SONG_WIDTH-1:0] curr_note_num, next_note_num;
     wire [`NOTE_WIDTH + `DURATION_WIDTH -1:0] note_and_duration;
