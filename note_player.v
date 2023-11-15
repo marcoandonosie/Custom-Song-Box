@@ -38,6 +38,7 @@ module note_player(
         .sample(sample_out)
     );
 
+    //states are counters for the note duration to load 
     wire [5:0] state, next_state;
     dffre #(.WIDTH(6)) state_reg (
         .clk(clk),
@@ -46,6 +47,8 @@ module note_player(
         .d(next_state),
         .q(state)
     );
+
+    //note resets if paused. Otherwise duration decrements every 1/48th of a second
     assign next_state = (reset || done_with_note || load_new_note)
                         ? duration_to_load : state - 1;
 
