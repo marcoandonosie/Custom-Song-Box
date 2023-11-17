@@ -17,9 +17,9 @@ module song_reader(
     input clk,
     input reset,
     input play,
-    input [1:0] song,
+    input [1:0] song, //specifies which song in the RAM
     input note_done,
-    output wire song_done,
+    output wire song_done, //when address = 
     output wire [5:0] note,
     output wire [5:0] duration,
     output wire new_note
@@ -31,21 +31,32 @@ module song_reader(
     wire [`SWIDTH-1:0] state;
     reg  [`SWIDTH-1:0] next;
 
+    wire [1:0] count; //keep track of how many notes are playing at once 
+    
     // For identifying when we reach the end of a song
     wire overflow;
 
-    dffr #(`SONG_WIDTH) note_counter (
+    
+    dffr #(`SONG_WIDTH) note_counter ( //tracks which note we are on of the 128 notes
         .clk(clk),
         .r(reset),
         .d(next_note_num),
         .q(curr_note_num)
     );
-    dffr #(`SWIDTH) fsm (
+    dffr #(`SWIDTH) fsm ( //keeps track of states
         .clk(clk),
         .r(reset),
         .d(next),
         .q(state)
     );
+
+    dffr #(`SWIDTH) note_numbers ( //keeps track of how many notes are playing at once
+        .clk(clk),
+        .r(reset),
+        .d(next_number),
+        .q(curr_number)
+    );
+
 
     song_rom rom(.clk(clk), .addr(rom_addr), .dout(note_and_duration));
 
@@ -53,7 +64,7 @@ module song_reader(
         case (state)
             `PAUSED:            next = play ? `RETRIEVE_NOTE : `PAUSED;
             `RETRIEVE_NOTE:     next = play ? `NEW_NOTE_READY : `PAUSED;
-            `NEW_NOTE_READY:    next = play ? `WAIT: `PAUSED;
+            `NEW_NOTE_READY:    begin next = play ? `WAIT: `PAUSED;
             `WAIT:              next = !play ? `PAUSED
                                              : (note_done ? `INCREMENT_ADDRESS
                                                           : `WAIT);
