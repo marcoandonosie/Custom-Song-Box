@@ -31,8 +31,6 @@ module song_reader(
     wire [`SWIDTH-1:0] state;
     reg  [`SWIDTH-1:0] next;
 
-    wire [1:0] count; //keep track of how many notes are playing at once 
-    
     // For identifying when we reach the end of a song
     wire overflow;
 
@@ -48,13 +46,6 @@ module song_reader(
         .r(reset),
         .d(next),
         .q(state)
-    );
-
-    dffr #(`SWIDTH) note_numbers ( //keeps track of how many notes are playing at once
-        .clk(clk),
-        .r(reset),
-        .d(next_number),
-        .q(curr_number)
     );
 
 
