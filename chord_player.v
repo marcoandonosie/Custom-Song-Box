@@ -12,3 +12,6 @@ module chord_player(
    input wire new_note2,
    input wire new_note3
 );
+
+   //instantiate note player THRICE here; should ideally work normally 
+   //timer logic should be implemented in SONG_READER; make it so that time_advance NEVER exceeds duration of note, and then feed in time_advance into note player
