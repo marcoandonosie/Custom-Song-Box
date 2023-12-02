@@ -130,9 +130,6 @@ module song_reader(
                                       : {1'b0, curr_note_num};
     assign song_done = overflow;
 
-    //handles time_elapsed logic;
-    assign time_elapsed = (state = `WAIT) ? rom_contents[8:3] : 6'b0;
-
     //handles time_advance and time_advance_ready logic
     assign time_advance_ready = (state == `WAIT);
     assign time_advance = (state == `WAIT) ? rom_contents[8:3] : 6'b0;
