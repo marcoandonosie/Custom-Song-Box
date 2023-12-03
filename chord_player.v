@@ -29,8 +29,10 @@ module chord_player(
    wire new_sample_ready1;
    wire new_sample_ready2;
    wire new_sample_ready3;
-   
-       note_player1 note_player(
+
+
+    //I asumed 1st field is name of module, 2nd is name of instantiation
+       note_player note_player1(
         .clk(clk),
         .reset(reset),
         .play_enable(play),
@@ -44,7 +46,7 @@ module chord_player(
           .new_sample_ready(new_sample_ready1)
     );
 
-   note_player2 note_player(
+   note_player note_player2(
         .clk(clk),
         .reset(reset),
         .play_enable(play),
@@ -58,7 +60,7 @@ module chord_player(
       .new_sample_ready(new_sample_ready2)
     );
 
-   note_player3 note_player(
+   note_player note_player3(
         .clk(clk),
         .reset(reset),
         .play_enable(play),
