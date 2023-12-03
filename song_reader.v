@@ -25,9 +25,6 @@ module song_reader(
     input note_done1,
     input note_done2,
     input note_done3,
-    input time_elapsed, //1. pulses up when we're done advancing time in a MSB-1 note 
-    output wire [5:0] time_advance, //2. outputs how much time note player should spend playing the note 
-    output wire time_advance_ready //3. pulses up when we have new time_advance value 
     output wire song_done, //when address = 512, and overflows into 10th bit
     output wire [5:0] note1, 
     output wire [5:0] note2,
@@ -47,6 +44,9 @@ module song_reader(
 
     wire [`SWIDTH-1:0] state;
     reg  [`SWIDTH-1:0] next;
+
+    //time we want note player to play based off the '1-starting' time advance notes
+    wire [`DURATION_WIDTH:0] time_advance;
     
     // For identifying when we reach the end of a song
     wire overflow;
@@ -123,7 +123,6 @@ module song_reader(
             default:            next = `PAUSED;
         endcase
     end
-
             
     //handles song_done logic        
     assign {overflow, next_note_num} =
