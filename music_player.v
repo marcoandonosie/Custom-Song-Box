@@ -59,39 +59,69 @@ module music_player(
 //      Song Reader
 //  ****************************************************************************
 //
-    wire [5:0] note_to_play;
-    wire [5:0] duration_for_note;
-    wire new_note;
-    wire note_done;
+    wire [5:0] note_to_play1;
+    wire [5:0] note_to_play2;
+    wire [5:0] note_to_play3;
+    wire [5:0] duration_for_note1;
+    wire [5:0] duration_for_note2;
+    wire [5:0] duration_for_note3;
+    wire new_note1;
+    wire new_note2;
+    wire new_note3;
+    wire note_done1;
+    wire note_done2;
+    wire note_done3;
+    
+
     song_reader song_reader(
         .clk(clk),
         .reset(reset | reset_player),
         .play(play),
         .song(current_song),
+        .note_done1(note_done1),
+        .note_done2(note_done2),
+        .note_done3(note_done3),
+        .time_elapsed(time_elapsed),
+        .time_advance(time_advance),
+        .time_advance_ready(time_advance_ready),
         .song_done(song_done),
-        .note(note_to_play),
-        .duration(duration_for_note),
-        .new_note(new_note),
-        .note_done(note_done)
+        .note1(note_to_play1),
+        .note2(note_to_play2),
+        .note3(note_to_play3),
+        .duration1(duration_for_note1),
+        .duration2(duration_for_note2),
+        .duration3(duration_for_note3),
+        .new_note1(new_note1),
+        .new_note2(new_note2),
+        .new_note3(new_note3),
     );
 
 //   
 //  ****************************************************************************
-//      Note Player
+//      Chord Player
 //  ****************************************************************************
 //  
     wire beat;
     wire generate_next_sample;
     wire [15:0] note_sample;
     wire note_sample_ready;
-    note_player note_player(
+
+    chord_player chord_player(
         .clk(clk),
-        .reset(reset),
+        .rst(reset),
         .play_enable(play),
-        .note_to_load(note_to_play),
-        .duration_to_load(duration_for_note),
-        .load_new_note(new_note),
-        .done_with_note(note_done),
+        .note_to_load1(note_to_play1),
+        .note_to_load2(note_to_play2),
+        .note_to_load3(note_to_play3),
+        .duration_to_load1(duration_for_note1),
+        .duration_to_load2(duration_for_note2),
+        .duration_to_load3(duration_for_note3),
+        .load_new_note1(new_note1),
+        .load_new_note2(new_note2),
+        .load_new_note3(new_note3),
+        .done_with_note1(note_done1),
+        .done_with_note2(note_done2),
+        .done_with_note3(note_done3),
         .beat(beat),
         .generate_next_sample(generate_next_sample),
         .sample_out(note_sample),
