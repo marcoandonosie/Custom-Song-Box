@@ -39,7 +39,8 @@ module song_reader(
     output wire new_note2,
     output wire new_note3
 );
-    
+
+    //check if all wire reg declared properly later 
     wire [`SONG_WIDTH-1:0] curr_note_num, next_note_num; //7 bits wide; 128 notes
     wire [`NOTE_WIDTH + `DURATION_WIDTH + `TYPE_WIDTH + `METADATA -1:0] rom_contents;
     wire [`SONG_WIDTH + 1:0] rom_addr = {song, curr_note_num};
@@ -131,7 +132,7 @@ module song_reader(
     assign song_done = overflow;
 
     //handles time_advance and time_advance_ready logic
-    assign time_advance_ready = (state == `WAIT);
+    assign time_advance_ready = (state == `WAIT); //possibly redundant 
     assign time_advance = (state == `WAIT) ? rom_contents[8:3] : 6'b0;
 
     //handles new_note logic; 
@@ -139,9 +140,9 @@ module song_reader(
     assign new_note2 = (state == `NEW_NOTE_READY2);
     assign new_note3 = (state == `NEW_NOTE_READY3);
 
-    //if new_note1 is on, then load note/duration values into note1 and duration1
-    assign {note1, duration1} = (new_note1) ? rom_contents[14:3] : 12'b0;
-    assign {note1, duration2} = (new_note2) ? rom_contents[14:3] : 12'b0;
-    assign {note1, duration3} = (new_note3) ? rom_contents[14:3] : 12'b0;
+    //if new_note1 is on, then load note/duration values into note1 and duration1. These values should pulse since new note pulses
+    assign {note1, duration1} = (new_note1) ? {rom_contents[14:9], time_advance} : 12'b0;
+    assign {note2, duration2} = (new_note2) ? {rom_contents[14:9], time_advance} : 12'b0;
+    assign {note3, duration3} = (new_note3) ? {rom_contents[14:9], time_advance} : 12'b0;
 
 endmodule
