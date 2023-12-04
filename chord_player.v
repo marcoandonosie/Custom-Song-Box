@@ -73,6 +73,11 @@ module chord_player(
       .sample_out(sample_out3),
       .new_sample_ready(new_sample_ready3)
     );
+
+fix: right shift BEFORE you add together.
+
+
+    
    //a new sample is ready if any of the 3 noteplayers have released a sample
    assign note_sample_ready = (new_sample_ready1 || new_sample_ready2 || new_sample_ready3);
 
