@@ -65,9 +65,9 @@ module song_reader(
         .q(state)
     );
 
-    wire next_note_ready1;
-    wire next_note_ready2;
-    wire next_note_ready3;
+    reg next_note_ready1;
+    reg next_note_ready2;
+    reg next_note_ready3;
     wire curr_note_ready1;
     wire curr_note_ready2;
     wire curr_note_ready3;
@@ -98,9 +98,9 @@ module song_reader(
     
 
     always @(*) begin //tells us if note is ready or not
-        next_note_ready_1 = (reset) ? 1'b1 : (note_done1) ? 1'b1 : (new_note1 ? 1'b0 : curr_note_ready_1);
-        next_note_ready_2 = (reset) ? 1'b1 : (note_done2) ? 1'b1 : (new_note2 ? 1'b0 : curr_note_ready_2);
-        next_note_ready_3 = (reset) ? 1'b1 : (note_done3) ? 1'b1 : (new_note3 ? 1'b0 : curr_note_ready_3);
+        next_note_ready1 = (reset || note_done1) ? 1'b1 : (new_note1 ? 1'b0 : curr_note_ready1);
+        next_note_ready2 = (reset || note_done2) ? 1'b1 : (new_note2 ? 1'b0 : curr_note_ready2);
+        next_note_ready3 = (reset || note_done3) ? 1'b1 : (new_note3 ? 1'b0 : curr_note_ready3);
     end
             
 
@@ -116,7 +116,7 @@ module song_reader(
             `NEW_NOTE_READY2:    next = play ? `INCREMENT_ADDRESS : `PAUSED;
             `NEW_NOTE_READY3:    next = play ? `INCREMENT_ADDRESS : `PAUSED;
             `WAIT:              next = !play ? `PAUSED // pass time_advance as an input to ALL note_player modules
-                                             : time_elapsed ? `INCREMENT_ADDRESS 
+                                             : note_done1 ? `INCREMENT_ADDRESS  //all note_dones return at the same time; simpler ROM means no more time/elapsed
                                              : `WAIT;
             `INCREMENT_ADDRESS: next = (play && ~overflow) ? `RETRIEVE_NOTE
                                                            : `PAUSED;
@@ -131,7 +131,6 @@ module song_reader(
     assign song_done = overflow;
 
     //handles time_advance and time_advance_ready logic
-    assign time_advance_ready = (state == `WAIT); //possibly redundant 
     assign time_advance = (state == `WAIT) ? rom_contents[8:3] : 6'b0;
 
     //handles new_note logic; 
