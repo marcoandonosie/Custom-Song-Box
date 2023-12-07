@@ -1,7 +1,7 @@
 module song_rom (
     input clk,
-    input [6:0] addr,
-    output reg [11:0] dout
+    input [8:0] addr,
+    output reg [15:0] dout
 );  
 
     wire [15:0] memory [511:0];
@@ -9,7 +9,7 @@ module song_rom (
     always @(posedge clk)                       
         dout = memory[addr];                    
 
-    assign memory[	0	] = 	{1'd0, 6'd25, 6'd12, 1'd0, 1'd0, 1'd0}	;
+assign memory[	0	] = 	{1'd0, 6'd25, 6'd12, 1'd0, 1'd0, 1'd0}	;
 assign memory[	1	] = 	{1'd0, 6'd40, 6'd48, 1'd0, 1'd0, 1'd0}	;
 assign memory[	2	] = 	{1'd0, 6'd44, 6'd48, 1'd0, 1'd0, 1'd0}	;
 assign memory[	3	] = 	{1'd1, 6'd0, 6'd12, 1'd0, 1'd0, 1'd0}	;
