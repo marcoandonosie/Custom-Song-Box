@@ -90,7 +90,7 @@ module music_player(
         .duration3(duration_for_note3),
         .new_note1(new_note1),
         .new_note2(new_note2),
-        .new_note3(new_note3),
+        .new_note3(new_note3)
     );
 
 //   
