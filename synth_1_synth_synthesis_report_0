@@ -1,0 +1,1121 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:39:14 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Thu Dec  7 10:49:05 2023
+# Process ID: 3119397
+# Current directory: /home/users/marcoas/final project 3/final project 3.runs/synth_1
+# Command line: vivado -log lab5_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source lab5_top.tcl
+# Log file: /home/users/marcoas/final project 3/final project 3.runs/synth_1/lab5_top.vds
+# Journal file: /home/users/marcoas/final project 3/final project 3.runs/synth_1/vivado.jou
+#-----------------------------------------------------------
+source lab5_top.tcl -notrace
+create_project: Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1700.844 ; gain = 40.023 ; free physical = 81506 ; free virtual = 94234
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository '/home/users/marcoas/Downloads/hdmi_tx_ip'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository '/cad/xilinx/vivado/2019.2/Vivado/2019.2/data/ip'.
+Command: synth_design -top lab5_top -part xc7z020clg400-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 3119575 
+WARNING: [Synth 8-2306] macro SWIDTH redefined [/home/users/marcoas/Downloads/lab5starterfiles/song_reader.v:10]
+WARNING: [Synth 8-2306] macro WAIT redefined [/home/users/marcoas/Downloads/lab5starterfiles/wave_capture.v:3]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:12 . Memory (MB): peak = 2191.926 ; gain = 207.656 ; free physical = 80919 ; free virtual = 93648
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'lab5_top' [/home/users/marcoas/Downloads/lab5starterfiles/lab5_top.v:1]
+	Parameter BPU_WIDTH bound to: 20 - type: integer 
+	Parameter BEAT_COUNT bound to: 1000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [/home/users/marcoas/final project 3/final project 3.runs/synth_1/.Xil/Vivado-3119397-caddy09.stanford.edu/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (1#1) [/home/users/marcoas/final project 3/final project 3.runs/synth_1/.Xil/Vivado-3119397-caddy09.stanford.edu/realtime/clk_wiz_0_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'button_press_unit' [/home/users/marcoas/Downloads/lab5starterfiles/button_press_unit.v:6]
+	Parameter WIDTH bound to: 20 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'brute_force_synchronizer' [/home/users/marcoas/Downloads/lab5starterfiles/brute_force_synchronizer.v:6]
+	Parameter WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'dff' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:3]
+	Parameter WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dff' (2#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:3]
+INFO: [Synth 8-6155] done synthesizing module 'brute_force_synchronizer' (3#1) [/home/users/marcoas/Downloads/lab5starterfiles/brute_force_synchronizer.v:6]
+INFO: [Synth 8-6157] synthesizing module 'debouncer' [/home/users/marcoas/Downloads/lab5starterfiles/debouncer.v:9]
+	Parameter WIDTH bound to: 20 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'dffr' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:16]
+	Parameter WIDTH bound to: 20 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffr' (4#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:16]
+INFO: [Synth 8-6157] synthesizing module 'dffr__parameterized0' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:16]
+	Parameter WIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffr__parameterized0' (4#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:16]
+INFO: [Synth 8-226] default block is never used [/home/users/marcoas/Downloads/lab5starterfiles/debouncer.v:48]
+INFO: [Synth 8-6155] done synthesizing module 'debouncer' (5#1) [/home/users/marcoas/Downloads/lab5starterfiles/debouncer.v:9]
+INFO: [Synth 8-6157] synthesizing module 'one_pulse' [/home/users/marcoas/Downloads/lab5starterfiles/one_pulse.v:7]
+INFO: [Synth 8-6157] synthesizing module 'dffr__parameterized1' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:16]
+	Parameter WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffr__parameterized1' (5#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'one_pulse' (6#1) [/home/users/marcoas/Downloads/lab5starterfiles/one_pulse.v:7]
+INFO: [Synth 8-6155] done synthesizing module 'button_press_unit' (7#1) [/home/users/marcoas/Downloads/lab5starterfiles/button_press_unit.v:6]
+INFO: [Synth 8-6157] synthesizing module 'music_player' [/home/users/marcoas/Downloads/lab4starterfiles/music_player.v:9]
+	Parameter BEAT_COUNT bound to: 1000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'mcu' [/home/users/marcoas/Downloads/lab5starterfiles/mcu.v:5]
+INFO: [Synth 8-6157] synthesizing module 'dffre' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+	Parameter WIDTH bound to: 2 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffre' (8#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+INFO: [Synth 8-6157] synthesizing module 'dffr__parameterized2' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:16]
+	Parameter WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffr__parameterized2' (8#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:16]
+INFO: [Synth 8-226] default block is never used [/home/users/marcoas/Downloads/lab5starterfiles/mcu.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'mcu' (9#1) [/home/users/marcoas/Downloads/lab5starterfiles/mcu.v:5]
+INFO: [Synth 8-6157] synthesizing module 'song_reader' [/home/users/marcoas/Downloads/lab5starterfiles/song_reader.v:20]
+INFO: [Synth 8-6157] synthesizing module 'dffr__parameterized3' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:16]
+	Parameter WIDTH bound to: 7 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffr__parameterized3' (9#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:16]
+INFO: [Synth 8-6157] synthesizing module 'dffr__parameterized4' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:16]
+	Parameter WIDTH bound to: 3 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffr__parameterized4' (9#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:16]
+INFO: [Synth 8-6157] synthesizing module 'dff__parameterized0' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:3]
+	Parameter WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dff__parameterized0' (9#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:3]
+INFO: [Synth 8-6157] synthesizing module 'song_rom' [/home/users/marcoas/Downloads/lab5starterfiles/song_rom.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'song_rom' (10#1) [/home/users/marcoas/Downloads/lab5starterfiles/song_rom.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'song_reader' (11#1) [/home/users/marcoas/Downloads/lab5starterfiles/song_reader.v:20]
+INFO: [Synth 8-6157] synthesizing module 'chord_player' [/home/users/marcoas/final project 3/final project 3.srcs/sources_1/new/chord_player.v:1]
+INFO: [Synth 8-6157] synthesizing module 'note_player' [/home/users/marcoas/Downloads/lab5starterfiles/note_player.v:1]
+INFO: [Synth 8-6157] synthesizing module 'frequency_rom' [/home/users/marcoas/Downloads/lab5starterfiles/frequency_rom.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'frequency_rom' (12#1) [/home/users/marcoas/Downloads/lab5starterfiles/frequency_rom.v:4]
+INFO: [Synth 8-6157] synthesizing module 'dffre__parameterized0' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+	Parameter WIDTH bound to: 20 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffre__parameterized0' (12#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+INFO: [Synth 8-6157] synthesizing module 'sine_reader' [/home/users/marcoas/Downloads/lab5starterfiles/sine_reader.v:1]
+	Parameter SWIDTH bound to: 22 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'dffre__parameterized1' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+	Parameter WIDTH bound to: 22 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffre__parameterized1' (12#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+INFO: [Synth 8-6157] synthesizing module 'sine_rom' [/home/users/marcoas/Downloads/lab5starterfiles/sine_rom.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sine_rom' (13#1) [/home/users/marcoas/Downloads/lab5starterfiles/sine_rom.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'sine_reader' (14#1) [/home/users/marcoas/Downloads/lab5starterfiles/sine_reader.v:1]
+INFO: [Synth 8-6157] synthesizing module 'dffre__parameterized2' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+	Parameter WIDTH bound to: 6 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffre__parameterized2' (14#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+INFO: [Synth 8-6155] done synthesizing module 'note_player' (15#1) [/home/users/marcoas/Downloads/lab5starterfiles/note_player.v:1]
+WARNING: [Synth 8-3848] Net new_sample_ready in module/entity chord_player does not have driver. [/home/users/marcoas/final project 3/final project 3.srcs/sources_1/new/chord_player.v:20]
+WARNING: [Synth 8-3848] Net play in module/entity chord_player does not have driver. [/home/users/marcoas/final project 3/final project 3.srcs/sources_1/new/chord_player.v:36]
+INFO: [Synth 8-6155] done synthesizing module 'chord_player' (16#1) [/home/users/marcoas/final project 3/final project 3.srcs/sources_1/new/chord_player.v:1]
+INFO: [Synth 8-6157] synthesizing module 'beat_generator' [/home/users/marcoas/Downloads/lab5starterfiles/beat_generator.v:1]
+	Parameter WIDTH bound to: 10 - type: integer 
+	Parameter STOP bound to: 1000 - type: integer 
+INFO: [Synth 8-6157] synthesizing module 'dffre__parameterized3' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+	Parameter WIDTH bound to: 10 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffre__parameterized3' (16#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+INFO: [Synth 8-6155] done synthesizing module 'beat_generator' (17#1) [/home/users/marcoas/Downloads/lab5starterfiles/beat_generator.v:1]
+INFO: [Synth 8-6157] synthesizing module 'codec_conditioner' [/home/users/marcoas/Downloads/lab5starterfiles/codec_conditioner.v:34]
+INFO: [Synth 8-6157] synthesizing module 'dffre__parameterized4' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+	Parameter WIDTH bound to: 1 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffre__parameterized4' (17#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+INFO: [Synth 8-6157] synthesizing module 'dffre__parameterized5' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+	Parameter WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffre__parameterized5' (17#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+INFO: [Synth 8-6155] done synthesizing module 'codec_conditioner' (18#1) [/home/users/marcoas/Downloads/lab5starterfiles/codec_conditioner.v:34]
+INFO: [Synth 8-6155] done synthesizing module 'music_player' (19#1) [/home/users/marcoas/Downloads/lab4starterfiles/music_player.v:9]
+INFO: [Synth 8-6157] synthesizing module 'dff__parameterized1' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:3]
+	Parameter WIDTH bound to: 17 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dff__parameterized1' (19#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:3]
+INFO: [Synth 8-6157] synthesizing module 'adau1761_codec' [/home/users/marcoas/Downloads/lab5starterfiles/adau1761_codec.v:1]
+INFO: [Synth 8-638] synthesizing module 'adau1761_izedboard' [/home/users/marcoas/Downloads/lab5starterfiles/adau1761_izedboard.vhd:45]
+	Parameter DRIVE bound to: 12 - type: integer 
+	Parameter IBUF_LOW_PWR bound to: 1 - type: bool 
+	Parameter IOSTANDARD bound to: DEFAULT - type: string 
+	Parameter SLEW bound to: SLOW - type: string 
+INFO: [Synth 8-113] binding component instance 'i_i2s_sda_obuf' to cell 'IOBUF' [/home/users/marcoas/Downloads/lab5starterfiles/adau1761_izedboard.vhd:128]
+INFO: [Synth 8-3491] module 'i2c' declared at '/home/users/marcoas/Downloads/lab5starterfiles/i2c.vhd:9' bound to instance 'Inst_i2c' of component 'i2c' [/home/users/marcoas/Downloads/lab5starterfiles/adau1761_izedboard.vhd:136]
+INFO: [Synth 8-638] synthesizing module 'i2c' [/home/users/marcoas/Downloads/lab5starterfiles/i2c.vhd:17]
+INFO: [Synth 8-3491] module 'adau1761_configuraiton_data' declared at '/home/users/marcoas/Downloads/lab5starterfiles/adau1761_configuraiton_data.vhd:13' bound to instance 'Inst_adau1761_configuraiton_data' of component 'adau1761_configuraiton_data' [/home/users/marcoas/Downloads/lab5starterfiles/i2c.vhd:52]
+INFO: [Synth 8-638] synthesizing module 'adau1761_configuraiton_data' [/home/users/marcoas/Downloads/lab5starterfiles/adau1761_configuraiton_data.vhd:19]
+INFO: [Synth 8-256] done synthesizing module 'adau1761_configuraiton_data' (20#1) [/home/users/marcoas/Downloads/lab5starterfiles/adau1761_configuraiton_data.vhd:19]
+	Parameter clk_divide bound to: 8'b01111000 
+INFO: [Synth 8-3491] module 'i3c2' declared at '/home/users/marcoas/Downloads/lab5starterfiles/i3c2.vhd:18' bound to instance 'Inst_i3c2' of component 'i3c2' [/home/users/marcoas/Downloads/lab5starterfiles/i2c.vhd:58]
+INFO: [Synth 8-638] synthesizing module 'i3c2' [/home/users/marcoas/Downloads/lab5starterfiles/i3c2.vhd:38]
+	Parameter clk_divide bound to: 8'b01111000 
+INFO: [Synth 8-256] done synthesizing module 'i3c2' (21#1) [/home/users/marcoas/Downloads/lab5starterfiles/i3c2.vhd:38]
+INFO: [Synth 8-256] done synthesizing module 'i2c' (22#1) [/home/users/marcoas/Downloads/lab5starterfiles/i2c.vhd:17]
+INFO: [Synth 8-3491] module 'ADAU1761_interface' declared at '/home/users/marcoas/Downloads/lab5starterfiles/ADAU1761_interface.vhd:11' bound to instance 'i_ADAU1761_interface' of component 'ADAU1761_interface' [/home/users/marcoas/Downloads/lab5starterfiles/adau1761_izedboard.vhd:144]
+INFO: [Synth 8-638] synthesizing module 'ADAU1761_interface' [/home/users/marcoas/Downloads/lab5starterfiles/ADAU1761_interface.vhd:16]
+INFO: [Synth 8-256] done synthesizing module 'ADAU1761_interface' (23#1) [/home/users/marcoas/Downloads/lab5starterfiles/ADAU1761_interface.vhd:16]
+INFO: [Synth 8-3491] module 'i2s_data_interface' declared at '/home/users/marcoas/Downloads/lab5starterfiles/i2s_data_interface.vhd:13' bound to instance 'Inst_i2s_data_interface' of component 'i2s_data_interface' [/home/users/marcoas/Downloads/lab5starterfiles/adau1761_izedboard.vhd:149]
+INFO: [Synth 8-638] synthesizing module 'i2s_data_interface' [/home/users/marcoas/Downloads/lab5starterfiles/i2s_data_interface.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'i2s_data_interface' (24#1) [/home/users/marcoas/Downloads/lab5starterfiles/i2s_data_interface.vhd:26]
+INFO: [Synth 8-256] done synthesizing module 'adau1761_izedboard' (25#1) [/home/users/marcoas/Downloads/lab5starterfiles/adau1761_izedboard.vhd:45]
+INFO: [Synth 8-638] synthesizing module 'clocking' [/home/users/marcoas/Downloads/lab5starterfiles/clocking.vhd:86]
+	Parameter BANDWIDTH bound to: OPTIMIZED - type: string 
+	Parameter CLKFBOUT_MULT_F bound to: 49.500000 - type: double 
+	Parameter CLKFBOUT_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKFBOUT_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKIN1_PERIOD bound to: 10.000000 - type: double 
+	Parameter CLKIN2_PERIOD bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_DIVIDE_F bound to: 20.625000 - type: double 
+	Parameter CLKOUT0_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT0_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT0_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKOUT1_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT1_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT1_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT1_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKOUT2_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT2_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT2_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT2_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKOUT3_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT3_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT3_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT3_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKOUT4_CASCADE bound to: 0 - type: bool 
+	Parameter CLKOUT4_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT4_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT4_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT4_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKOUT5_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT5_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT5_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT5_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter CLKOUT6_DIVIDE bound to: 1 - type: integer 
+	Parameter CLKOUT6_DUTY_CYCLE bound to: 0.500000 - type: double 
+	Parameter CLKOUT6_PHASE bound to: 0.000000 - type: double 
+	Parameter CLKOUT6_USE_FINE_PS bound to: 0 - type: bool 
+	Parameter COMPENSATION bound to: ZHOLD - type: string 
+	Parameter DIVCLK_DIVIDE bound to: 5 - type: integer 
+	Parameter IS_CLKINSEL_INVERTED bound to: 1'b0 
+	Parameter IS_PSEN_INVERTED bound to: 1'b0 
+	Parameter IS_PSINCDEC_INVERTED bound to: 1'b0 
+	Parameter IS_PWRDWN_INVERTED bound to: 1'b0 
+	Parameter IS_RST_INVERTED bound to: 1'b0 
+	Parameter REF_JITTER1 bound to: 0.010000 - type: double 
+	Parameter REF_JITTER2 bound to: 0.000000 - type: double 
+	Parameter SS_EN bound to: FALSE - type: string 
+	Parameter SS_MODE bound to: CENTER_HIGH - type: string 
+	Parameter SS_MOD_PERIOD bound to: 10000 - type: integer 
+	Parameter STARTUP_WAIT bound to: 0 - type: bool 
+INFO: [Synth 8-113] binding component instance 'mmcm_adv_inst' to cell 'MMCME2_ADV' [/home/users/marcoas/Downloads/lab5starterfiles/clocking.vhd:130]
+INFO: [Synth 8-113] binding component instance 'clkf_buf' to cell 'BUFG' [/home/users/marcoas/Downloads/lab5starterfiles/clocking.vhd:189]
+INFO: [Synth 8-113] binding component instance 'clkout1_buf' to cell 'BUFG' [/home/users/marcoas/Downloads/lab5starterfiles/clocking.vhd:195]
+INFO: [Synth 8-256] done synthesizing module 'clocking' (26#1) [/home/users/marcoas/Downloads/lab5starterfiles/clocking.vhd:86]
+INFO: [Synth 8-6155] done synthesizing module 'adau1761_codec' (27#1) [/home/users/marcoas/Downloads/lab5starterfiles/adau1761_codec.v:1]
+INFO: [Synth 8-638] synthesizing module 'vga_controller_800x480_60' [/home/users/marcoas/Downloads/lab5starterfiles/vga_controller_800x480_60.vhd:70]
+INFO: [Synth 8-256] done synthesizing module 'vga_controller_800x480_60' (28#1) [/home/users/marcoas/Downloads/lab5starterfiles/vga_controller_800x480_60.vhd:70]
+WARNING: [Synth 8-689] width (12) of port connection 'hcount' does not match port width (11) of module 'vga_controller_800x480_60' [/home/users/marcoas/Downloads/lab5starterfiles/lab5_top.v:202]
+WARNING: [Synth 8-689] width (12) of port connection 'vcount' does not match port width (11) of module 'vga_controller_800x480_60' [/home/users/marcoas/Downloads/lab5starterfiles/lab5_top.v:203]
+INFO: [Synth 8-6157] synthesizing module 'wave_display_top' [/home/users/marcoas/Downloads/lab5starterfiles/wave_display_top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'wave_capture' [/home/users/marcoas/Downloads/lab5starterfiles/wave_capture.v:6]
+INFO: [Synth 8-6157] synthesizing module 'dffr__parameterized5' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:16]
+	Parameter WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffr__parameterized5' (28#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:16]
+INFO: [Synth 8-6157] synthesizing module 'dffr__parameterized6' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:16]
+	Parameter WIDTH bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffr__parameterized6' (28#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:16]
+INFO: [Synth 8-155] case statement is not full and has no default [/home/users/marcoas/Downloads/lab5starterfiles/wave_capture.v:45]
+INFO: [Synth 8-6155] done synthesizing module 'wave_capture' (29#1) [/home/users/marcoas/Downloads/lab5starterfiles/wave_capture.v:6]
+INFO: [Synth 8-6157] synthesizing module 'ram_1w2r' [/home/users/marcoas/Downloads/lab5starterfiles/ram_1w2r.v:6]
+	Parameter WIDTH bound to: 8 - type: integer 
+	Parameter DEPTH bound to: 9 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'ram_1w2r' (30#1) [/home/users/marcoas/Downloads/lab5starterfiles/ram_1w2r.v:6]
+INFO: [Synth 8-6157] synthesizing module 'wave_display' [/home/users/marcoas/Downloads/lab5starterfiles/wave_display.v:1]
+INFO: [Synth 8-6157] synthesizing module 'dffre__parameterized6' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+	Parameter WIDTH bound to: 9 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffre__parameterized6' (30#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+INFO: [Synth 8-6157] synthesizing module 'dffre__parameterized7' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+	Parameter WIDTH bound to: 8 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dffre__parameterized7' (30#1) [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:34]
+INFO: [Synth 8-6155] done synthesizing module 'wave_display' (31#1) [/home/users/marcoas/Downloads/lab5starterfiles/wave_display.v:1]
+INFO: [Synth 8-6155] done synthesizing module 'wave_display_top' (32#1) [/home/users/marcoas/Downloads/lab5starterfiles/wave_display_top.v:1]
+INFO: [Synth 8-6157] synthesizing module 'hdmi_tx_0' [/home/users/marcoas/final project 3/final project 3.runs/synth_1/.Xil/Vivado-3119397-caddy09.stanford.edu/realtime/hdmi_tx_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'hdmi_tx_0' (33#1) [/home/users/marcoas/final project 3/final project 3.runs/synth_1/.Xil/Vivado-3119397-caddy09.stanford.edu/realtime/hdmi_tx_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'lab5_top' (34#1) [/home/users/marcoas/Downloads/lab5starterfiles/lab5_top.v:1]
+WARNING: [Synth 8-3331] design wave_display has unconnected port x[10]
+WARNING: [Synth 8-3331] design wave_display has unconnected port x[0]
+WARNING: [Synth 8-3331] design wave_display has unconnected port y[0]
+WARNING: [Synth 8-3331] design chord_player has unconnected port new_sample_ready
+WARNING: [Synth 8-3331] design chord_player has unconnected port play_enable
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:16 . Memory (MB): peak = 2236.832 ; gain = 252.562 ; free physical = 80939 ; free virtual = 93669
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 2251.676 ; gain = 267.406 ; free physical = 80934 ; free virtual = 93664
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 2251.676 ; gain = 267.406 ; free physical = 80934 ; free virtual = 93664
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2263.582 ; gain = 0.000 ; free physical = 80928 ; free virtual = 93658
+INFO: [Netlist 29-17] Analyzing 2 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc] for cell 'U3'
+Finished Parsing XDC File [/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc] for cell 'U3'
+Parsing XDC File [/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'U2'
+Finished Parsing XDC File [/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc] for cell 'U2'
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2420.426 ; gain = 0.000 ; free physical = 80838 ; free virtual = 93568
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
+
+INFO: [Timing 38-2] Deriving generated clocks
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.16 ; elapsed = 00:00:00.16 . Memory (MB): peak = 2420.426 ; gain = 0.000 ; free physical = 80837 ; free virtual = 93567
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 2420.426 ; gain = 436.156 ; free physical = 80917 ; free virtual = 93647
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 2420.426 ; gain = 436.156 ; free physical = 80917 ; free virtual = 93647
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property IO_BUFFER_TYPE = NONE for TMDS_Clk_n. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc}, line 1).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDS_Clk_n. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc}, line 2).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDS_Clk_p. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc}, line 3).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDS_Clk_p. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc}, line 4).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDS_Data_n[0]. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc}, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDS_Data_n[0]. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc}, line 6).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDS_Data_n[1]. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc}, line 7).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDS_Data_n[1]. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc}, line 8).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDS_Data_n[2]. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc}, line 9).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDS_Data_n[2]. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc}, line 10).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDS_Data_p[0]. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc}, line 11).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDS_Data_p[0]. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc}, line 12).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDS_Data_p[1]. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc}, line 13).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDS_Data_p[1]. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc}, line 14).
+Applied set_property IO_BUFFER_TYPE = NONE for TMDS_Data_p[2]. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc}, line 15).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for TMDS_Data_p[2]. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/hdmi_tx_0/hdmi_tx_0/hdmi_tx_0_in_context.xdc}, line 16).
+Applied set_property IO_BUFFER_TYPE = NONE for sysclk. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc}, line 5).
+Applied set_property CLOCK_BUFFER_TYPE = NONE for sysclk. (constraint file  {/home/users/marcoas/final project 3/final project 3.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc}, line 6).
+Applied set_property DONT_TOUCH = true for U3. (constraint file  auto generated constraint, line ).
+Applied set_property DONT_TOUCH = true for U2. (constraint file  auto generated constraint, line ).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 2420.426 ; gain = 436.156 ; free physical = 80917 ; free virtual = 93647
+---------------------------------------------------------------------------------
+INFO: [Synth 8-4471] merging register 'debug_scl_reg' into 'i2c_scl_reg' [/home/users/marcoas/Downloads/lab5starterfiles/i3c2.vhd:129]
+WARNING: [Synth 8-327] inferring latch for variable 'next_address_1_reg' [/home/users/marcoas/Downloads/lab5starterfiles/wave_capture.v:51]
+WARNING: [Synth 8-327] inferring latch for variable 'next_state_1_reg' [/home/users/marcoas/Downloads/lab5starterfiles/wave_capture.v:50]
+INFO: [Synth 8-6430] The Block RAM "ram_1w2r:/RAM_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:25 ; elapsed = 00:00:38 . Memory (MB): peak = 2420.426 ; gain = 436.156 ; free physical = 80911 ; free virtual = 93642
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     22 Bit       Adders := 3     
+	   2 Input     20 Bit       Adders := 2     
+	   3 Input     18 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 4     
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 2     
+	   2 Input      8 Bit       Adders := 5     
+	   2 Input      6 Bit       Adders := 3     
+	   2 Input      4 Bit       Adders := 1     
+	   2 Input      2 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	              127 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
+	               24 Bit    Registers := 2     
+	               22 Bit    Registers := 3     
+	               20 Bit    Registers := 8     
+	               17 Bit    Registers := 1     
+	               16 Bit    Registers := 9     
+	               11 Bit    Registers := 2     
+	               10 Bit    Registers := 3     
+	                9 Bit    Registers := 5     
+	                8 Bit    Registers := 4     
+	                7 Bit    Registers := 1     
+	                6 Bit    Registers := 3     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                3 Bit    Registers := 1     
+	                2 Bit    Registers := 4     
+	                1 Bit    Registers := 39    
++---RAMs : 
+	               4K Bit         RAMs := 1     
++---ROMs : 
+	                              ROMs := 7     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 1     
+	   2 Input     20 Bit        Muxes := 3     
+	 512 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 6     
+	  21 Input     16 Bit        Muxes := 1     
+	   6 Input     16 Bit        Muxes := 1     
+	  13 Input     16 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 5     
+	   6 Input     10 Bit        Muxes := 1     
+	  13 Input     10 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   6 Input      9 Bit        Muxes := 1     
+	  13 Input      9 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 5     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 10    
+	   2 Input      4 Bit        Muxes := 8     
+	   4 Input      4 Bit        Muxes := 1     
+	   7 Input      4 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 2     
+	  13 Input      4 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   4 Input      3 Bit        Muxes := 1     
+	   6 Input      2 Bit        Muxes := 3     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 3     
+	   4 Input      1 Bit        Muxes := 3     
+	   2 Input      1 Bit        Muxes := 44    
+	  13 Input      1 Bit        Muxes := 6     
+	  19 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 1     
+	   6 Input      1 Bit        Muxes := 14    
+	  14 Input      1 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module dff 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module dffr 
+Detailed RTL Component Info : 
++---Registers : 
+	               20 Bit    Registers := 1     
+Module dffr__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
+Module debouncer 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     20 Bit       Adders := 1     
++---Muxes : 
+	   6 Input      2 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+Module dffr__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module dffre 
+Detailed RTL Component Info : 
++---Registers : 
+	                2 Bit    Registers := 1     
+Module dffr__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module mcu 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      2 Bit       Adders := 1     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 1     
+Module dffr__parameterized3 
+Detailed RTL Component Info : 
++---Registers : 
+	                7 Bit    Registers := 1     
+Module dffr__parameterized4 
+Detailed RTL Component Info : 
++---Registers : 
+	                3 Bit    Registers := 1     
+Module dff__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module song_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---Muxes : 
+	 512 Input     16 Bit        Muxes := 1     
+Module song_reader 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
++---Muxes : 
+	   2 Input      7 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 1     
+	   2 Input      3 Bit        Muxes := 2     
+	   4 Input      3 Bit        Muxes := 1     
+	   3 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 7     
+Module frequency_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               20 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
+Module dffre__parameterized0 
+Detailed RTL Component Info : 
++---Registers : 
+	               20 Bit    Registers := 1     
+Module dffre__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	               22 Bit    Registers := 1     
+Module sine_rom 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
+Module sine_reader 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     22 Bit       Adders := 1     
+	   2 Input     16 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 1     
+Module dffre__parameterized2 
+Detailed RTL Component Info : 
++---Registers : 
+	                6 Bit    Registers := 1     
+Module note_player 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      6 Bit       Adders := 1     
++---Muxes : 
+	   2 Input     20 Bit        Muxes := 1     
+	   2 Input      6 Bit        Muxes := 3     
+Module chord_player 
+Detailed RTL Component Info : 
++---Adders : 
+	   3 Input     18 Bit       Adders := 1     
+Module dffre__parameterized3 
+Detailed RTL Component Info : 
++---Registers : 
+	               10 Bit    Registers := 1     
+Module beat_generator 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     10 Bit       Adders := 1     
+Module dffre__parameterized4 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module dffre__parameterized5 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module codec_conditioner 
+Detailed RTL Component Info : 
++---Muxes : 
+	   2 Input     16 Bit        Muxes := 1     
+Module dff__parameterized1 
+Detailed RTL Component Info : 
++---Registers : 
+	               17 Bit    Registers := 1     
+Module adau1761_configuraiton_data 
+Detailed RTL Component Info : 
++---Registers : 
+	                9 Bit    Registers := 1     
++---ROMs : 
+	                              ROMs := 1     
+Module i3c2 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     16 Bit       Adders := 1     
+	   2 Input     10 Bit       Adders := 1     
+	   2 Input      8 Bit       Adders := 1     
+	   2 Input      4 Bit       Adders := 1     
++---XORs : 
+	   2 Input      1 Bit         XORs := 1     
++---Registers : 
+	               16 Bit    Registers := 2     
+	               10 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
+	                8 Bit    Registers := 2     
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	  21 Input     16 Bit        Muxes := 1     
+	   2 Input     16 Bit        Muxes := 2     
+	   6 Input     16 Bit        Muxes := 1     
+	  13 Input     16 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 2     
+	   6 Input     10 Bit        Muxes := 1     
+	  13 Input     10 Bit        Muxes := 1     
+	   2 Input      9 Bit        Muxes := 1     
+	   6 Input      9 Bit        Muxes := 1     
+	  13 Input      9 Bit        Muxes := 1     
+	   6 Input      8 Bit        Muxes := 1     
+	   2 Input      8 Bit        Muxes := 2     
+	   2 Input      4 Bit        Muxes := 8     
+	   4 Input      4 Bit        Muxes := 1     
+	   7 Input      4 Bit        Muxes := 1     
+	   6 Input      4 Bit        Muxes := 2     
+	  13 Input      4 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 1     
+	  13 Input      1 Bit        Muxes := 6     
+	  19 Input      1 Bit        Muxes := 1     
+	   8 Input      1 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 29    
+	   6 Input      1 Bit        Muxes := 14    
+	  14 Input      1 Bit        Muxes := 1     
+	   7 Input      1 Bit        Muxes := 1     
+	   5 Input      1 Bit        Muxes := 1     
+Module ADAU1761_interface 
+Detailed RTL Component Info : 
++---Registers : 
+	                1 Bit    Registers := 1     
+Module i2s_data_interface 
+Detailed RTL Component Info : 
++---Registers : 
+	              127 Bit    Registers := 1     
+	               64 Bit    Registers := 1     
+	               24 Bit    Registers := 2     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 4     
++---Muxes : 
+	   2 Input     64 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 4     
+Module vga_controller_800x480_60 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
++---Registers : 
+	               11 Bit    Registers := 2     
+	                1 Bit    Registers := 3     
++---Muxes : 
+	   2 Input      1 Bit        Muxes := 2     
+Module dffr__parameterized5 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+Module dffr__parameterized6 
+Detailed RTL Component Info : 
++---Registers : 
+	               16 Bit    Registers := 1     
+Module wave_capture 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 2     
++---Muxes : 
+	   2 Input      8 Bit        Muxes := 3     
+	   4 Input      8 Bit        Muxes := 1     
+	   2 Input      2 Bit        Muxes := 2     
+	   6 Input      2 Bit        Muxes := 1     
+	   2 Input      1 Bit        Muxes := 1     
+	   4 Input      1 Bit        Muxes := 1     
+Module ram_1w2r 
+Detailed RTL Component Info : 
++---Registers : 
+	                9 Bit    Registers := 2     
++---RAMs : 
+	               4K Bit         RAMs := 1     
+Module dffre__parameterized6 
+Detailed RTL Component Info : 
++---Registers : 
+	                9 Bit    Registers := 1     
+Module dffre__parameterized7 
+Detailed RTL Component Info : 
++---Registers : 
+	                8 Bit    Registers := 1     
+Module wave_display 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input      8 Bit       Adders := 1     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+INFO: [Synth 8-4471] merging register 'chord_player/note_player2/reader/ready_1/q_reg[0:0]' into 'chord_player/note_player1/reader/ready_1/q_reg[0:0]' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:10]
+INFO: [Synth 8-4471] merging register 'chord_player/note_player2/reader/ready_2/q_reg[0:0]' into 'chord_player/note_player1/reader/ready_2/q_reg[0:0]' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:10]
+INFO: [Synth 8-4471] merging register 'chord_player/note_player3/reader/ready_1/q_reg[0:0]' into 'chord_player/note_player1/reader/ready_1/q_reg[0:0]' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:10]
+INFO: [Synth 8-4471] merging register 'chord_player/note_player3/reader/ready_2/q_reg[0:0]' into 'chord_player/note_player1/reader/ready_2/q_reg[0:0]' [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:10]
+WARNING: [Synth 8-6040] Register i2c_interface/Inst_i2c/Inst_i3c2/pcnext_reg_rep driving address of a ROM cannot be packed in BRAM/URAM because of presence of initial value.
+WARNING: [Synth 8-3936] Found unconnected internal register 'sample_reg/q_reg' and it is trimmed from '17' to '16' bits. [/home/users/marcoas/Downloads/lab5starterfiles/ff_lib.v:10]
+WARNING: [Synth 8-3331] design wave_display_top has unconnected port x[10]
+WARNING: [Synth 8-3331] design wave_display_top has unconnected port x[0]
+WARNING: [Synth 8-3331] design wave_display_top has unconnected port y[0]
+RAM Pipeline Warning: Read Address Register Found For RAM wd_top/sample_ram/RAM_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM wd_top/sample_ram/RAM_reg. We will not be able to pipeline it. This may degrade performance. 
+INFO: [Synth 8-6430] The Block RAM "lab5_top/wd_top/sample_ram/RAM_reg" may get memory collision error if read and write address collide. Use attribute (* rw_addr_collision= "yes" *) to avoid collision 
+INFO: [Synth 8-4652] Swapped enable and write-enable on 1 RAM instances of RAM wd_top/sample_ram/RAM_reg to conserve power
+RAM Pipeline Warning: Read Address Register Found For RAM wd_top/sample_ram/RAM_reg. We will not be able to pipeline it. This may degrade performance. 
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/codec_conditioner/next_sample_latch/q_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/codec_conditioner/next_sample_latch/q_reg[1] )
+INFO: [Synth 8-3886] merging instance 'music_player/codec_conditioner/current_sample_latch/q_reg[1]' (FDRE) to 'music_player/codec_conditioner/current_sample_latch/q_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/codec_conditioner/next_sample_latch/q_reg[2] )
+INFO: [Synth 8-3886] merging instance 'music_player/codec_conditioner/current_sample_latch/q_reg[2]' (FDRE) to 'music_player/codec_conditioner/current_sample_latch/q_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/codec_conditioner/next_sample_latch/q_reg[3] )
+INFO: [Synth 8-3886] merging instance 'music_player/codec_conditioner/current_sample_latch/q_reg[3]' (FDRE) to 'music_player/codec_conditioner/current_sample_latch/q_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/codec_conditioner/next_sample_latch/q_reg[4] )
+INFO: [Synth 8-3886] merging instance 'music_player/codec_conditioner/current_sample_latch/q_reg[4]' (FDRE) to 'music_player/codec_conditioner/current_sample_latch/q_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/codec_conditioner/next_sample_latch/q_reg[5] )
+INFO: [Synth 8-3886] merging instance 'music_player/codec_conditioner/current_sample_latch/q_reg[5]' (FDRE) to 'music_player/codec_conditioner/current_sample_latch/q_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/codec_conditioner/next_sample_latch/q_reg[6] )
+INFO: [Synth 8-3886] merging instance 'music_player/codec_conditioner/current_sample_latch/q_reg[6]' (FDRE) to 'music_player/codec_conditioner/current_sample_latch/q_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/codec_conditioner/next_sample_latch/q_reg[7] )
+INFO: [Synth 8-3886] merging instance 'music_player/codec_conditioner/current_sample_latch/q_reg[7]' (FDRE) to 'music_player/codec_conditioner/current_sample_latch/q_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/state_reg/q_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/state_reg/q_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/state_reg/q_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/state_reg/q_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/state_reg/q_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/state_reg/q_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/state_reg/q_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/state_reg/q_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/state_reg/q_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/state_reg/q_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/state_reg/q_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/state_reg/q_reg[5] )
+INFO: [Synth 8-3886] merging instance 'music_player/song_reader/rom/dout_reg[3]' (FD) to 'music_player/song_reader/rom/dout_reg[4]'
+INFO: [Synth 8-3886] merging instance 'music_player/song_reader/rom/dout_reg[2]' (FD) to 'music_player/song_reader/rom/dout_reg[4]'
+INFO: [Synth 8-3886] merging instance 'music_player/song_reader/rom/dout_reg[1]' (FD) to 'music_player/song_reader/rom/dout_reg[4]'
+INFO: [Synth 8-3886] merging instance 'music_player/song_reader/rom/dout_reg[0]' (FD) to 'music_player/song_reader/rom/dout_reg[4]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/state_reg/q_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/song_reader/rom/dout_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/state_reg/q_reg[1] )
+INFO: [Synth 8-3886] merging instance 'music_player/song_reader/rom/dout_reg[5]' (FD) to 'music_player/song_reader/rom/dout_reg[6]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/state_reg/q_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/state_reg/q_reg[3] )
+INFO: [Synth 8-3886] merging instance 'music_player/song_reader/rom/dout_reg[7]' (FD) to 'music_player/song_reader/rom/dout_reg[8]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/state_reg/q_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/state_reg/q_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/codec_conditioner/next_sample_latch/q_reg[8] )
+INFO: [Synth 8-3886] merging instance 'music_player/codec_conditioner/current_sample_latch/q_reg[8]' (FDRE) to 'music_player/codec_conditioner/current_sample_latch/q_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player1/dff2/q_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player2/dff2/q_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[0] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[1] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[2] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[3] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[4] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[5] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[6] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[7] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[8] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[9] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[10] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[11] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[12] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[13] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[14] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[15] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[16] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[17] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[18] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/chord_player/note_player3/dff2/q_reg[19] )
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/codec_conditioner/next_sample_latch/q_reg[9] )
+INFO: [Synth 8-3886] merging instance 'music_player/codec_conditioner/current_sample_latch/q_reg[9]' (FDRE) to 'music_player/codec_conditioner/current_sample_latch/q_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/codec_conditioner/next_sample_latch/q_reg[10] )
+INFO: [Synth 8-3886] merging instance 'music_player/codec_conditioner/current_sample_latch/q_reg[10]' (FDRE) to 'music_player/codec_conditioner/current_sample_latch/q_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/codec_conditioner/next_sample_latch/q_reg[11] )
+INFO: [Synth 8-3886] merging instance 'music_player/codec_conditioner/current_sample_latch/q_reg[11]' (FDRE) to 'music_player/codec_conditioner/current_sample_latch/q_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/codec_conditioner/next_sample_latch/q_reg[12] )
+INFO: [Synth 8-3886] merging instance 'music_player/codec_conditioner/current_sample_latch/q_reg[12]' (FDRE) to 'music_player/codec_conditioner/current_sample_latch/q_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/codec_conditioner/next_sample_latch/q_reg[13] )
+INFO: [Synth 8-3886] merging instance 'music_player/codec_conditioner/current_sample_latch/q_reg[13]' (FDRE) to 'music_player/codec_conditioner/current_sample_latch/q_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/codec_conditioner/next_sample_latch/q_reg[14] )
+INFO: [Synth 8-3886] merging instance 'music_player/codec_conditioner/current_sample_latch/q_reg[14]' (FDRE) to 'music_player/codec_conditioner/current_sample_latch/q_reg[0]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\music_player/codec_conditioner/next_sample_latch/q_reg[15] )
+INFO: [Synth 8-3886] merging instance 'music_player/codec_conditioner/current_sample_latch/q_reg[15]' (FDRE) to 'music_player/codec_conditioner/current_sample_latch/q_reg[0]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[0]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[1] )
+INFO: [Synth 8-3886] merging instance 'sample_reg/q_reg[8]' (FD) to 'sample_reg/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'sample_reg/q_reg[7]' (FD) to 'sample_reg/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'sample_reg/q_reg[6]' (FD) to 'sample_reg/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'sample_reg/q_reg[5]' (FD) to 'sample_reg/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'sample_reg/q_reg[4]' (FD) to 'sample_reg/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'sample_reg/q_reg[3]' (FD) to 'sample_reg/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'sample_reg/q_reg[2]' (FD) to 'sample_reg/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'sample_reg/q_reg[1]' (FD) to 'sample_reg/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'sample_reg/q_reg[0]' (FD) to 'sample_reg/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'music_player/song_reader/rom/dout_reg[4]' (FD) to 'sample_reg/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'sample_reg/q_reg[9]' (FD) to 'sample_reg/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'sample_reg/q_reg[10]' (FD) to 'sample_reg/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'sample_reg/q_reg[11]' (FD) to 'sample_reg/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'sample_reg/q_reg[12]' (FD) to 'sample_reg/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'sample_reg/q_reg[13]' (FD) to 'sample_reg/q_reg[15]'
+INFO: [Synth 8-3886] merging instance 'sample_reg/q_reg[14]' (FD) to 'sample_reg/q_reg[15]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\sample_reg/q_reg[15] )
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[1]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[2]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[2] )
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[2]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[3]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[3] )
+INFO: [Common 17-14] Message 'Synth 8-3333' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[3]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[4]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[4]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[5]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[5]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[6]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[6]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[7]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[7]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[8]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[8]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[9]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[9]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[10]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[10]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[11]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[11]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[12]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[12]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[13]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[13]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[14]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[14]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[15]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[15]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[16]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[16]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[17]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[17]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[18]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[18]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[19]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[19]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[20]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[20]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[21]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[21]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[22]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[22]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[23]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[23]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[24]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[24]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[25]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[25]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[26]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[26]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[27]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[27]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[28]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[28]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[29]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[29]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[30]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[30]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[31]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[31]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[32]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[32]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[33]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[33]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[34]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[34]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[35]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[35]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[36]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[36]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[37]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[37]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[38]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[38]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[39]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[39]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[40]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[40]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[41]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[41]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[42]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[42]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[43]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[43]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[44]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[44]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[45]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[45]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[46]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[46]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[47]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[47]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[48]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[48]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[49]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[49]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[50]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[50]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[51]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[51]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[52]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[52]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[53]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[53]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[54]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[54]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[55]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[55]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[56]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[56]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[57]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[57]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[58]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[58]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[59]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[59]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[60]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[60]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[61]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[61]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[62]'
+INFO: [Synth 8-3886] merging instance 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[62]' (FDE) to 'adau1761_codec/i2c_interface/Inst_i2s_data_interface/sr_out_reg[63]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:35 ; elapsed = 00:00:48 . Memory (MB): peak = 2420.426 ; gain = 436.156 ; free physical = 80893 ; free virtual = 93628
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+ROM:
++---------------+------------------------------------------------------------------+---------------+----------------+
+|Module Name    | RTL Object                                                       | Depth x Width | Implemented As | 
++---------------+------------------------------------------------------------------+---------------+----------------+
+|music_player   | chord_player/note_player2/rom_instance/dout_reg                  | 64x20         | Block RAM      | 
+|music_player   | chord_player/note_player2/reader/sineRom/dout_reg                | 1024x16       | Block RAM      | 
+|music_player   | chord_player/note_player3/rom_instance/dout_reg                  | 64x20         | Block RAM      | 
+|music_player   | chord_player/note_player3/reader/sineRom/dout_reg                | 1024x16       | Block RAM      | 
+|music_player   | chord_player/note_player1/rom_instance/dout_reg                  | 64x20         | Block RAM      | 
+|music_player   | chord_player/note_player1/reader/sineRom/dout_reg                | 1024x16       | Block RAM      | 
+|adau1761_codec | i2c_interface/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg | 1024x9        | Block RAM      | 
++---------------+------------------------------------------------------------------+---------------+----------------+
+
+
+Block RAM: Preliminary Mapping	Report (see note below)
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|lab5_top    | wd_top/sample_ram/RAM_reg | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:47 ; elapsed = 00:01:06 . Memory (MB): peak = 2420.426 ; gain = 436.156 ; free physical = 80770 ; free virtual = 93505
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:47 ; elapsed = 00:01:06 . Memory (MB): peak = 2420.426 ; gain = 436.156 ; free physical = 80770 ; free virtual = 93505
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping	Report
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|lab5_top    | wd_top/sample_ram/RAM_reg | 512 x 8(READ_FIRST)    | W |   | 512 x 8(WRITE_FIRST)   |   | R | Port A and B     | 1      | 0      | 
++------------+---------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP and Shift Register Reporting
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-3332] Sequential element (wd_top/wc/next_address_1_reg[7]) is unused and will be removed from module lab5_top.
+WARNING: [Synth 8-3332] Sequential element (wd_top/wc/next_address_1_reg[6]) is unused and will be removed from module lab5_top.
+WARNING: [Synth 8-3332] Sequential element (wd_top/wc/next_address_1_reg[5]) is unused and will be removed from module lab5_top.
+WARNING: [Synth 8-3332] Sequential element (wd_top/wc/next_address_1_reg[4]) is unused and will be removed from module lab5_top.
+WARNING: [Synth 8-3332] Sequential element (wd_top/wc/next_address_1_reg[3]) is unused and will be removed from module lab5_top.
+WARNING: [Synth 8-3332] Sequential element (wd_top/wc/next_address_1_reg[2]) is unused and will be removed from module lab5_top.
+WARNING: [Synth 8-3332] Sequential element (wd_top/wc/next_address_1_reg[1]) is unused and will be removed from module lab5_top.
+WARNING: [Synth 8-3332] Sequential element (wd_top/wc/next_address_1_reg[0]) is unused and will be removed from module lab5_top.
+WARNING: [Synth 8-3332] Sequential element (wd_top/wc/next_state_1_reg[1]) is unused and will be removed from module lab5_top.
+WARNING: [Synth 8-3332] Sequential element (wd_top/wc/next_state_1_reg[0]) is unused and will be removed from module lab5_top.
+INFO: [Synth 8-7053] The timing for the instance adau1761_codec/i2c_interface/Inst_i2c/Inst_adau1761_configuraiton_data/data_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7053] The timing for the instance wd_top/sample_ram/RAM_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:48 ; elapsed = 00:01:06 . Memory (MB): peak = 2420.426 ; gain = 436.156 ; free physical = 80768 ; free virtual = 93502
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:54 ; elapsed = 00:01:12 . Memory (MB): peak = 2420.426 ; gain = 436.156 ; free physical = 80768 ; free virtual = 93503
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:54 ; elapsed = 00:01:12 . Memory (MB): peak = 2420.426 ; gain = 436.156 ; free physical = 80768 ; free virtual = 93503
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:54 ; elapsed = 00:01:13 . Memory (MB): peak = 2420.426 ; gain = 436.156 ; free physical = 80768 ; free virtual = 93503
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:54 ; elapsed = 00:01:13 . Memory (MB): peak = 2420.426 ; gain = 436.156 ; free physical = 80768 ; free virtual = 93503
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:54 ; elapsed = 00:01:13 . Memory (MB): peak = 2420.426 ; gain = 436.156 ; free physical = 80768 ; free virtual = 93503
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:54 ; elapsed = 00:01:13 . Memory (MB): peak = 2420.426 ; gain = 436.156 ; free physical = 80768 ; free virtual = 93503
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |clk_wiz_0     |         1|
+|2     |hdmi_tx_0     |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-----------+------+
+|      |Cell       |Count |
++------+-----------+------+
+|1     |clk_wiz_0  |     1|
+|2     |hdmi_tx_0  |     1|
+|3     |BUFG       |     2|
+|4     |CARRY4     |     9|
+|5     |LUT1       |    19|
+|6     |LUT2       |    20|
+|7     |LUT3       |    17|
+|8     |LUT4       |    65|
+|9     |LUT5       |    30|
+|10    |LUT6       |    86|
+|11    |MMCME2_ADV |     1|
+|12    |RAMB18E1   |     1|
+|13    |RAMB18E1_1 |     1|
+|14    |FDRE       |   107|
+|15    |IBUF       |     1|
+|16    |IOBUF      |     1|
+|17    |OBUF       |    15|
++------+-----------+------+
+
+Report Instance Areas: 
++------+-----------------------------------------+----------------------------+------+
+|      |Instance                                 |Module                      |Cells |
++------+-----------------------------------------+----------------------------+------+
+|1     |top                                      |                            |   387|
+|2     |  adau1761_codec                         |adau1761_codec              |   229|
+|3     |    codec_clock_gen                      |clocking                    |     3|
+|4     |    i2c_interface                        |adau1761_izedboard          |   226|
+|5     |      Inst_i2c                           |i2c                         |   223|
+|6     |        Inst_adau1761_configuraiton_data |adau1761_configuraiton_data |    54|
+|7     |        Inst_i3c2                        |i3c2                        |   169|
+|8     |      i_ADAU1761_interface               |ADAU1761_interface          |     2|
+|9     |  vga_control                            |vga_controller_800x480_60   |    91|
+|10    |  wd_top                                 |wave_display_top            |    39|
+|11    |    sample_ram                           |ram_1w2r                    |    10|
+|12    |    wd                                   |wave_display                |    29|
+|13    |      RAM_addresses                      |dffre__parameterized6       |     8|
+|14    |      RAM_data                           |dffre__parameterized7       |    16|
++------+-----------------------------------------+----------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:54 ; elapsed = 00:01:13 . Memory (MB): peak = 2420.426 ; gain = 436.156 ; free physical = 80768 ; free virtual = 93503
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 17 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:49 ; elapsed = 00:01:07 . Memory (MB): peak = 2420.426 ; gain = 267.406 ; free physical = 80823 ; free virtual = 93558
+Synthesis Optimization Complete : Time (s): cpu = 00:00:54 ; elapsed = 00:01:13 . Memory (MB): peak = 2420.426 ; gain = 436.156 ; free physical = 80824 ; free virtual = 93559
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2420.426 ; gain = 0.000 ; free physical = 80901 ; free virtual = 93636
+INFO: [Netlist 29-17] Analyzing 13 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2420.426 ; gain = 0.000 ; free physical = 80843 ; free virtual = 93577
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1 instances were transformed.
+  IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
+
+INFO: [Common 17-83] Releasing license: Synthesis
+343 Infos, 28 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:09 ; elapsed = 00:01:40 . Memory (MB): peak = 2420.426 ; gain = 686.863 ; free physical = 80972 ; free virtual = 93707
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2420.426 ; gain = 0.000 ; free physical = 80972 ; free virtual = 93707
+WARNING: [Constraints 18-5210] No constraints selected for write.
+Resolution: This message can indicate that there are no constraints for the design, or it can indicate that the used_in flags are set such that the constraints are ignored. This later case is used when running synth_design to not write synthesis constraints to the resulting checkpoint. Instead, project constraints are read when the synthesized design is opened.
+INFO: [Common 17-1381] The checkpoint '/home/users/marcoas/final project 3/final project 3.runs/synth_1/lab5_top.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file lab5_top_utilization_synth.rpt -pb lab5_top_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  7 10:51:18 2023...
