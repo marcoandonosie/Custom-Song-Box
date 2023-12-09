@@ -29,7 +29,9 @@ module lab5_top(
     output wire [2:0] leds_rgb_0,
     output wire [2:0] leds_rgb_1,
 
+	//corresponds to the BOTTOM RIGHT buttons; each bit is a button state
     input [2:0] btn,
+    input [1:0] sw, //new code!!
 
     /* 
     //VGA OUTPUT 
@@ -51,6 +53,11 @@ module lab5_top(
 
     wire reset, play_button, next_button;
     assign {reset, play_button, next_button} = btn;
+
+
+//*************************************  new code!!  *************************
+	wire stereo;
+	assign stereo = sw[0];
 
     // Clock converter
     wire clk_100, display_clk, serial_clk;
@@ -139,9 +146,19 @@ module lab5_top(
 //      Codec interface
 //  ****************************************************************************
 //  
-    wire [23:0] hphone_r = 0;
+	
+//new code here!! ****************************************************************************
+    wire [23:0] hphone_r;
+    wire [23:0] hphone_l;
+
+	//they switch depending on the state of button sw[0]
+    assign hphone_r = (stereo) ? {codec_sample, 8'h00} : 0;
+    assign hphone_l = (stereo) ? 0 : {codec_sample, 8'h00};
+
+ //****************************************************************************
+	
     wire [23:0] line_in_l = 0;  
-	wire [23:0] line_in_r =  0; 
+    wire [23:0] line_in_r =  0; 
 	
     // Output the sample onto the LEDs for the fun of it.
     assign leds_rgb_0 = codec_sample[15:13];
@@ -160,8 +177,13 @@ module lab5_top(
         .AC_MCLK(AC_MCLK),
         .AC_SCK(AC_SCK),
         .AC_SDA(AC_SDA),
-        .hphone_l({codec_sample, 8'h00}),
+
+	    
+ //**********************************  new code here!!  ****************************************** 
+	.hphone_l(hphone_l),
         .hphone_r(hphone_r),
+ //****************************************************************************
+	    
         .line_in_l(line_in_l),
         .line_in_r(line_in_r),
         .new_sample(new_frame)
