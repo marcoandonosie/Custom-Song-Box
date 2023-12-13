@@ -1,6 +1,6 @@
 `define ARMED 2'b00
 `define ACTIVE 2'b01
-`define WAIT 2'b10
+`define WAIT_READ 2'b10
 
 module wave_capture (
     input clk,
@@ -40,7 +40,7 @@ module wave_capture (
 	dffre #(1) zero_cross_flip_flop(.clk(clk), .r(reset), .en(~new_sample_ready), .d(is_negative), .q(last_is_negative));
 
 	//flip flop that changes read_index
-	dffre #(1) read_index_flip_flop(.clk(clk), .r(reset), .en(wave_display_idle && state == `WAIT), .d(read_index_temp), .q(read_index));
+	dffre #(1) read_index_flip_flop(.clk(clk), .r(reset), .en(wave_display_idle && state == `WAIT_READ), .d(read_index_temp), .q(read_index));
 
 //change the states based on various signals
 always @ (*) begin
@@ -51,17 +51,17 @@ always @ (*) begin
 			end else begin	//else stay in the ARMED state
 				next_state_temp = `ARMED;
 			end
-		`ACTIVE: //when in the ACTIVE state, just wait until we have counted to 255 and then go to the WAIT state
-			if (count_done) begin //if count_done signal is high move to the next state (WAIT)
-				next_state_temp = `WAIT;
+		`ACTIVE: //when in the ACTIVE state, just wait until we have counted to 255 and then go to the WAIT_READ state
+			if (count_done) begin //if count_done signal is high move to the next state (WAIT_READ)
+				next_state_temp = `WAIT_READ;
 			end else begin // else stay in the active state
 				next_state_temp = `ACTIVE;
 			end
-		`WAIT: 
+		`WAIT_READ: 
 			if (wave_display_idle) begin //if wave_display_idle is high we move to the ARMED state 
 				next_state_temp = `ARMED; 
 			end else begin
-				next_state_temp = `WAIT; // else we stay in the wait state
+				next_state_temp = `WAIT_READ; // else we stay in the wait state
 			end
 		default: next_state_temp = `ARMED;
 		endcase
