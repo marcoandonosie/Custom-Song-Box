@@ -24,18 +24,17 @@ module chord_player(
    wire [15:0] sample_out1;
    wire [15:0] sample_out2;
    wire [15:0] sample_out3;
-   wire [17:0] sample_out_unnormalized;
 
-   wire new_sample_ready1;
-   wire new_sample_ready2;
-   wire new_sample_ready3;
+   wire sample_ready1;
+   wire sample_ready2;
+   wire sample_ready3;
 
 
-    //I asumed 1st field is name of module, 2nd is name of instantiation
+    //I assumed 1st field is name of module, 2nd is name of instantiation
        note_player note_player1(
         .clk(clk),
         .reset(reset),
-        .play_enable(play),
+        .play_enable(play_enable),
           .note_to_load(note_to_load1),
           .duration_to_load(duration_to_load1),
           .load_new_note(load_new_note1),
@@ -43,13 +42,13 @@ module chord_player(
         .beat(beat),
         .generate_next_sample(generate_next_sample),
           .sample_out(sample_out1),
-          .new_sample_ready(new_sample_ready1)
+          .new_sample_ready(sample_ready1)
     );
 
    note_player note_player2(
         .clk(clk),
         .reset(reset),
-        .play_enable(play),
+        .play_enable(play_enable),
       .note_to_load(note_to_load2),
       .duration_to_load(duration_to_load2),
       .load_new_note(load_new_note2),
@@ -57,13 +56,13 @@ module chord_player(
         .beat(beat),
         .generate_next_sample(generate_next_sample),
       .sample_out(sample_out2),
-      .new_sample_ready(new_sample_ready2)
+      .new_sample_ready(sample_ready2)
     );
 
    note_player note_player3(
         .clk(clk),
         .reset(reset),
-        .play_enable(play),
+        .play_enable(play_enable),
       .note_to_load(note_to_load3),
       .duration_to_load(duration_to_load3),
       .load_new_note(load_new_note3),
@@ -71,18 +70,26 @@ module chord_player(
         .beat(beat),
         .generate_next_sample(generate_next_sample),
       .sample_out(sample_out3),
-      .new_sample_ready(new_sample_ready3)
+      .new_sample_ready(sample_ready3)
     );
 
-fix: right shift BEFORE you add together.
 
+    wire new_sample_ready1;
+    wire new_sample_ready2;
+    wire new_sample_ready3;
+
+    assign new_sample_ready1 = (reset) ? 1'b0 : sample_ready1;
+    assign new_sample_ready2 = (reset) ? 1'b0 : sample_ready2;
+    assign new_sample_ready3 = (reset) ? 1'b0 : sample_ready3;
+        
 
     
    //a new sample is ready if any of the 3 noteplayers have released a sample
-   assign note_sample_ready = (new_sample_ready1 || new_sample_ready2 || new_sample_ready3);
+   assign new_sample_ready = (new_sample_ready1 || new_sample_ready2 || new_sample_ready3);
 
-   //add the samples together, then divide by 4 via bitshift to avoid clipping
-   assign sample_out_unnormalized = (sample_out1 + sample_out2 + sample_out3);
-   assign sample_out = sample_out_unnormalized[17:2];
+    wire [17:0] total_sample_out;
+    assign total_sample_out = ($signed(sample_out1) + $signed(sample_out2) + $signed(sample_out3));
+    assign sample_out = total_sample_out[17:2];
+
    
-   //timer logic should be implemented in SONG_READER; make it so that time_advance NEVER exceeds duration of note, and then feed in time_advance into note player
+  endmodule
