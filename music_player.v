@@ -105,7 +105,7 @@ module music_player(
 
     chord_player chord_player(
         .clk(clk),
-        .rst(reset),
+        .reset(reset),
         .play_enable(play),
         .note_to_load1(note_to_play1),
         .note_to_load2(note_to_play2),
