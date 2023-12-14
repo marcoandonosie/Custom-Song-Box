@@ -7,7 +7,7 @@
 // ----------------------------------------------
 // Define State Assignments
 // ----------------------------------------------
-`define SWIDTH 3
+`define SWIDTH_READER 3
 `define PAUSED             3'b000
 `define WAIT               3'b001
 `define INCREMENT_ADDRESS  3'b010
@@ -15,6 +15,7 @@
 `define NEW_NOTE_READY1     3'b100
 `define NEW_NOTE_READY2     3'b101
 `define NEW_NOTE_READY3     3'b110
+`define WAIT_ROM       3'b111
 
 
 module song_reader(
@@ -43,12 +44,12 @@ module song_reader(
     wire [`NOTE_WIDTH + `DURATION_WIDTH + `TYPE_WIDTH + `METADATA -1:0] rom_contents;
     wire [`SONG_WIDTH + 1:0] rom_addr = {song, curr_note_num};
 
-    wire [`SWIDTH-1:0] state;
-    reg  [`SWIDTH-1:0] next;
+    wire [`SWIDTH_READER-1:0] state;
+    reg  [`SWIDTH_READER-1:0] next;
     
 
     //time we want note player to play based off the '1-starting' time advance notes
-    wire [`DURATION_WIDTH:0] time_advance;
+    wire [`DURATION_WIDTH - 1:0] time_advance;
     
     // For identifying when we reach the end of a song
     reg overflow;
@@ -61,7 +62,7 @@ module song_reader(
         .d(next_note_num),
         .q(curr_note_num)
     );
-    dffr #(`SWIDTH) fsm ( //keeps track of states
+    dffr #(`SWIDTH_READER) fsm ( //keeps track of states
         .clk(clk),
         .r(reset),
         .d(next),
@@ -88,51 +89,6 @@ module song_reader(
         .d(next_note_ready3),
         .q(curr_note_ready3)
     );
-
-    reg next_note_on1, next_note_on2, next_note_on3;
-    wire curr_note_on1, curr_note_on2, curr_note_on3;
-
-    dffre note_on1 (
-        .clk(clk),
-        .r(reset),
-        .en(new_note1),
-        .d(next_note_on1),
-        .q(curr_note_on1)
-    );
-
-    dffre note_on2 (
-        .clk(clk),
-        .r(reset),
-        .en(new_note2),
-        .d(next_note_on2),
-        .q(curr_note_on2)
-    );
-
-    dffre note_on3 (
-        .clk(clk),
-        .r(reset),
-        .en(new_note3),
-        .d(next_note_on3),
-        .q(curr_note_on3)
-    );
-
-always @(*) begin
-    if (reset) begin
-        next_note_ready1 = 1'b0;
-        end else begin
-        next_note_ready1 = !curr_note_ready1;
-    end
-    if (reset) begin
-        next_note_ready2 = 1'b0;
-        end else begin
-        next_note_ready2 = !curr_note_ready2;
-    end
-    if (reset) begin
-        next_note_ready3 = 1'b0;
-        end else begin
-        next_note_ready3 = !curr_note_ready3;
-    end
-end
     
 
     song_rom rom(.clk(clk), .addr(rom_addr), .dout(rom_contents));
@@ -180,8 +136,9 @@ always @(*) begin
             `NEW_NOTE_READY1:    next = play ? `INCREMENT_ADDRESS : `PAUSED; //logic works if note/duration outputs are allowed to 'pulse' and latch as inputs to NP
             `NEW_NOTE_READY2:    next = play ? `INCREMENT_ADDRESS : `PAUSED;
             `NEW_NOTE_READY3:    next = play ? `INCREMENT_ADDRESS : `PAUSED;
-            `WAIT:              next = !play ? `PAUSED : note_done1 ? `INCREMENT_ADDRESS : `WAIT;
-            `INCREMENT_ADDRESS: next = (play && ~overflow) ? `RETRIEVE_NOTE
+            `WAIT:              next = !play ? `PAUSED : note_done3 ? `INCREMENT_ADDRESS : `WAIT;
+            `WAIT_ROM:          next = !play ? `PAUSED : `RETRIEVE_NOTE;
+            `INCREMENT_ADDRESS: next = (play && ~overflow) ? `WAIT_ROM
                                                            : `PAUSED;
             default:            next = `PAUSED;
         endcase
@@ -211,8 +168,41 @@ end
     assign new_note3 = (state == `NEW_NOTE_READY3) ? 1'b1 : 1'b0;
 
     //if new_note1 is on, then load note/duration values into note1 and duration1. These values should pulse since new note pulses
-    assign {note1, duration1} = (curr_note_on1) ? {rom_contents[14:9], time_advance} : 12'b0;
-    assign {note2, duration2} = (curr_note_on2) ? {rom_contents[14:9], time_advance} : 12'b0;
-    assign {note3, duration3} = (curr_note_on3) ? {rom_contents[14:9], time_advance} : 12'b0;
+
+
+    reg [5:0] temp_note1, temp_note2, temp_note3;
+    reg [5:0] temp_duration1, temp_duration2, temp_duration3;
+
+
+    //note and duration logic
+    always @(*) begin
+    if (reset) begin
+        {temp_note1, temp_duration1} = 12'b0; 
+        end else if (new_note1) begin
+            {temp_note1, temp_duration1} = {rom_contents[14:9], time_advance}; 
+        end else begin
+            {temp_note1, temp_duration1} = {temp_note1, time_advance};
+    end
+         if (reset) begin
+             {temp_note2, temp_duration2} = 12'b0; 
+         end else if (new_note2) begin
+             {temp_note2, temp_duration2} = {rom_contents[14:9], time_advance}; 
+        end else begin
+            {temp_note2, temp_duration2} = {temp_note2, time_advance};
+    end
+         if (reset) begin
+             {temp_note3, temp_duration3} = 12'b0; 
+        end else if (new_note3) begin
+            {temp_note3, temp_duration3} = {rom_contents[14:9], time_advance}; 
+        end else begin
+            {temp_note3, temp_duration3} = {temp_note3, time_advance};
+    end
+    end
+
+    assign {note1, duration1} = {temp_note1, temp_duration1};
+    assign {note2, duration2} = {temp_note2, temp_duration2};
+    assign {note3, duration3} = {temp_note3, temp_duration3};
+
+        
 
 endmodule
